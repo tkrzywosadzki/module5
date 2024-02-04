@@ -8,7 +8,10 @@
 const templates = {
 
   titleLink: Handlebars.compile(document.querySelector('#title-list-template').innerHTML),
-  articleTagLink: Handlebars.compile(document.querySelector('#article-tag-template').innerHTML)
+  articleTagLink: Handlebars.compile(document.querySelector('#article-tag-template').innerHTML),
+  articleAuthorLink: Handlebars.compile(document.querySelector('#article-author-template').innerHTML),
+  tagList: Handlebars.compile(document.querySelector('#tags-list-template').innerHTML),
+  authorList: Handlebars.compile(document.querySelector('#authors-list-template').innerHTML)
 }
 
 const links = document.querySelectorAll('.titles a');
@@ -204,7 +207,7 @@ function generateTags() {
   let allTagsHTML = '';
 
   for(let tag in allTags){
-    allTagsHTML += '<li><a href="#tag-' + tag + '" class="' + calculateTagClass(allTags[tag], tagsParams) + '">' + tag + '</a></li>';
+    allTagsHTML += templates.tagList({tagName: tag, tagClass: calculateTagClass(allTags[tag], tagsParams)}) ;  //'<li><a href="#tag-' + tag + '" class="' + calculateTagClass(allTags[tag], tagsParams) + '">' + tag + '</a></li>'
   }
   console.log(allTagsHTML);
 
@@ -268,7 +271,7 @@ function generateAuthors() {
 
     const author = article.getAttribute('data-author');
 
-    const authorHTML = '<a href="#author-' + author + '">' + 'by '  + author + '</a>';
+    const authorHTML = templates.articleAuthorLink({authorName: author}); //'<a href="#author-' + author + '">' + 'by '  + author + '</a>'
 
     //html = html + authorHTML;
 
@@ -294,7 +297,7 @@ function generateAuthors() {
   let allAuthorsHTML = '';
 
   for(let author in allAuthors){
-    allAuthorsHTML += '<li><a href="#author-' + author + '">' + author + ' ('+ allAuthors[author] +')</a></li>';
+    allAuthorsHTML += templates.authorList({authorName: author, authorCount: allAuthors[author]}); //'<li><a href="#author-' + author + '">' + author + ' ('+ allAuthors[author] +')</a></li>'
   }
   console.log(allAuthorsHTML);
 

@@ -242,6 +242,9 @@
   </div>
   <script id="title-list-template" type="text/x-handlebars-template"><li><a href="#{{ articleId }}"><span> {{ articleTitle }} </span></a></li></script>
   <script id="article-tag-template" type="text/x-handlebars-template"><li><a href="#tag-{{ tagName }}">{{ tagName }}</a></li></script>
+  <script id="article-author-template" type="text/x-handlebars-template"><a href="#author-{{ authorName }}">by {{ authorName }}</a></script>
+  <script id="tags-list-template" type="text/x-handlebars-template"><li><a href="#tag-{{ tagName }}" class="{{ tagClass }}"> {{ tagName }}</a></li></script>
+  <script id="authors-list-template" type="text/x-handlebars-template"><li><a href="#author-{{ authorName }}">{{ authorName }} {{ authorCount }}</a></li></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
   <script src="js/script.js"></script>
 </body>
