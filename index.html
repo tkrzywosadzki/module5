@@ -232,39 +232,17 @@
         <aside class="sidebar">
           <h2 class="section-title">Tags</h2>
           <ul class="list tags">
-            <li><a href="#">design</a> <span>(6)</span></li>
-            <li><a href="#">code</a> <span>(5)</span></li>
-            <li><a href="#">tutorials</a> <span>(4)</span></li>
-            <li><a href="#">reviews</a> <span>(4)</span></li>
-            <li><a href="#">news</a> <span>(6)</span></li>
           </ul>
           <h2 class="section-title">Authors</h2>
           <ul class="list authors">
-            <li>
-              <a href="#">
-                <span class="author-name">Kitty Toebean</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span class="author-name">Theo Tabby</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span class="author-name">George Tuxedo</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span class="author-name">Marion Berry</span>
-              </a>
-            </li>
           </ul>
         </aside>
       </main>
     </div>
   </div>
+  <script id="title-list-template" type="text/x-handlebars-template"><li><a href="#{{ articleId }}"><span> {{ articleTitle }} </span></a></li></script>
+  <script id="article-tag-template" type="text/x-handlebars-template"><li><a href="#tag-{{ tagName }}">{{ tagName }}</a></li></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
   <script src="js/script.js"></script>
 </body>
 
